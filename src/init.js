@@ -16,7 +16,7 @@ async function init() {
     }
     requestAnimationFrame(nextAnimationFrame);
   }
-  requestAnimationFrame(nextAnimationFrame);
+  nextAnimationFrame();
 }
 
 init();

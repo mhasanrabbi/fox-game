@@ -2,10 +2,10 @@ import { ICONS } from "./constants";
 
 const toggleHighlighted = (icon, show) =>
   document
-    .querySelector(`${ICONS[icon]}-icon`)
+    .querySelector(`.${ICONS[icon]}-icon`)
     .classList.toggle("highlighted", show);
 
-export default function inintButtons(handleUserAction) {
+export default function initButtons(handleUserAction) {
   let selectedIcon = 0;
 
   function buttonClick(event) {
@@ -13,9 +13,10 @@ export default function inintButtons(handleUserAction) {
       toggleHighlighted(selectedIcon, false);
       selectedIcon = (2 + selectedIcon) % ICONS.length;
       toggleHighlighted(selectedIcon, true);
-    } else if (target.classList.contains("right-btn")) {
+    } else if (event.target.classList.contains("right-btn")) {
       toggleHighlighted(selectedIcon, false);
       selectedIcon = (1 + selectedIcon) % ICONS.length;
+      toggleHighlighted(selectedIcon, true);
     } else {
       handleUserAction(ICONS[selectedIcon]);
     }

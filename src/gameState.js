@@ -3,8 +3,11 @@ const gameState = {
   clock: 1,
   tick() {
     this.clock++;
-    console.log(this.colck);
+    console.log(`clock ${this.colck}`);
     return this.clock;
+  },
+  handleUserAction(icon) {
+    console.log(icon);
   },
 };
 
